@@ -1,11 +1,6 @@
-const removeFromArray = function() {
-    let result = [...arguments[0]];
-    for (var i = 1; i < arguments.length; i++) {
-       result = result.filter(function(value,index,result) {
-        return value != arguments[i];
-      });
-    }
-    return result;
+const removeFromArray = function(...args) {
+  let result = args[0];
+  return result.filter(val => !args.includes(val));
 }
 
 module.exports = removeFromArray
